@@ -24,8 +24,14 @@ jobs:
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
+      - name: Show current directory
+        run: pwd
+
+      - name: Show DOTNET_ROOT
+        run:  echo  ${{ env.DOTNET_ROOT }}
+
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp/MyBlazorWebApp
+        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
