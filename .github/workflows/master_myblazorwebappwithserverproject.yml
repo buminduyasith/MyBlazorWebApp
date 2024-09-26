@@ -30,17 +30,11 @@ jobs:
       - name: Show DOTNET_ROOT
         run:  echo  ${{ env.DOTNET_ROOT }}
 
-      - name: Show DOTNET_ROOT
-        run:  ls
-
-      - name: Change directory
-        run: cd MyBlazorWebApp/MyBlazorWebApp && pwd
-
-      - name: Show current directory 2
+      - name: Show directories 1
         run:  ls
 
       - name: dotnet publish
-        run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish MyBlazorWebApp\MyBlazorWebApp -c Release -o ${{env.DOTNET_ROOT}}\myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
