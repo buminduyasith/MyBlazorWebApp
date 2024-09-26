@@ -30,6 +30,9 @@ jobs:
       - name: Show DOTNET_ROOT
         run:  echo  ${{ env.DOTNET_ROOT }}
 
+      - name: Show DOTNET_ROOT
+        run:  ls
+
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
