@@ -33,6 +33,9 @@ jobs:
       - name: Show DOTNET_ROOT
         run:  ls
 
+      - name: Change directory
+        run: cd MyBlazorWebApp/MyBlazorWebApp && pwd
+
       - name: dotnet publish
         run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
